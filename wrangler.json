@@ -4,7 +4,7 @@
     "binding": "ASSETS",
     "directory": "dist"
   },
-  "compatibility_date": "2026-01-18",
+  "compatibility_date": "2026-01-20",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "main": "dist/_worker.js/index.js",
   "name": "cookiebot-demo",
