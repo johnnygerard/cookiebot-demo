@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   integrations: [sitemap()],
-  site: `https://placeholder.example`,
+  site: "https://cookiebot-demo.mail-25a.workers.dev",
   trailingSlash: "never",
   vite: {
     plugins: [
