@@ -1,0 +1,30 @@
+---
+import "~/styles/globals.css";
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      href="/assets/images/favicon-light.png"
+      media="(prefers-color-scheme: light)"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/assets/images/favicon-dark.png"
+      media="(prefers-color-scheme: dark)"
+      type="image/png"
+      sizes="32x32"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro 5 Starter</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

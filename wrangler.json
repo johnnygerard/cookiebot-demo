@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist"
+  },
+  "compatibility_date": "2026-01-18",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "main": "dist/_worker.js/index.js",
+  "name": "starter-astro-5",
+  "observability": {
+    "enabled": true
+  },
+  "preview_urls": true,
+  "send_metrics": false,
+  "workers_dev": true
+}
