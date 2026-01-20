@@ -1,4 +1,6 @@
 ---
+import GtmNoScript from "~/components/GtmNoScript.astro";
+import GtmScript from "~/components/GtmScript.astro";
 import "~/styles/globals.css";
 ---
 
@@ -6,6 +8,7 @@ import "~/styles/globals.css";
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
+    <GtmScript />
     <link
       rel="icon"
       href="/assets/images/favicon-light.png"
@@ -22,9 +25,10 @@ import "~/styles/globals.css";
     />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astro 5 Starter</title>
+    <title>Cookiebot Demo</title>
   </head>
   <body>
+    <GtmNoScript />
     <slot />
   </body>
 </html>

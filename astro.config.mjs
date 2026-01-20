@@ -1,7 +1,7 @@
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
@@ -9,8 +9,16 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  env: {
+    schema: {
+      PUBLIC_GTM_CONTAINER_ID: envField.string({
+        access: "public",
+        context: "client",
+      }),
+    },
+  },
   integrations: [sitemap()],
-  site: `https://placeholder.example`,
+  site: "https://cookiebot-demo.mail-25a.workers.dev",
   trailingSlash: "never",
   vite: {
     plugins: [
