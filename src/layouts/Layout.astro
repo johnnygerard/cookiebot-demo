@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets";
+import Footer from "~/components/Footer.astro";
 import GtmNoScript from "~/components/GtmNoScript.astro";
 import GtmScript from "~/components/GtmScript.astro";
 import Header from "~/components/Header.astro";
@@ -35,6 +36,7 @@ import "~/styles/globals.css";
       <main class="grid flex-1 items-center">
         <slot />
       </main>
+      <Footer />
     </div>
   </body>
 </html>
