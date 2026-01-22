@@ -1,4 +1,5 @@
 ---
+import { Font } from "astro:assets";
 import GtmNoScript from "~/components/GtmNoScript.astro";
 import GtmScript from "~/components/GtmScript.astro";
 import "~/styles/globals.css";
@@ -9,6 +10,8 @@ import "~/styles/globals.css";
   <head>
     <meta charset="utf-8" />
     <GtmScript />
+    <Font cssVariable="--font-inter" preload={true} />
+    <Font cssVariable="--font-space-grotesk" preload={true} />
     <link
       rel="icon"
       href="/assets/images/favicon-light.png"
@@ -31,7 +34,7 @@ import "~/styles/globals.css";
       content="VantaShield is a cybersecurity firm providing managed defense, incident readiness, and cloud assurance."
     />
   </head>
-  <body>
+  <body class="font-sans text-base">
     <GtmNoScript />
     <slot />
   </body>

@@ -41,4 +41,8 @@
   --color-lavender-mist: #f3eff5;
   --color-lime-moss: #72b01d;
   --color-green: #3f7d20;
+
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
