@@ -2,6 +2,7 @@
 import { Font } from "astro:assets";
 import GtmNoScript from "~/components/GtmNoScript.astro";
 import GtmScript from "~/components/GtmScript.astro";
+import Header from "~/components/Header.astro";
 import "~/styles/globals.css";
 ---
 
@@ -26,8 +27,14 @@ import "~/styles/globals.css";
       content="VantaShield is a cybersecurity firm providing managed defense, incident readiness, and cloud assurance."
     />
   </head>
-  <body class="font-sans text-base">
+  <body class="bg-onyx font-sans text-base text-lavender-mist">
     <GtmNoScript />
-    <slot />
+    {/* This wrapper prevents a body overflow in mobile browsers. */}
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main class="grid flex-1 items-center">
+        <slot />
+      </main>
+    </div>
   </body>
 </html>
