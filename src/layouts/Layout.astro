@@ -5,6 +5,12 @@ import GtmNoScript from "~/components/GtmNoScript.astro";
 import GtmScript from "~/components/GtmScript.astro";
 import Header from "~/components/Header.astro";
 import "~/styles/globals.css";
+
+type Props = {
+  title?: string;
+};
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,7 +28,7 @@ import "~/styles/globals.css";
     />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VantaShield</title>
+    <title>{title ? `${title} | VantaShield` : "VantaShield"}</title>
     <meta
       name="description"
       content="VantaShield is a cybersecurity firm providing managed defense, incident readiness, and cloud assurance."
