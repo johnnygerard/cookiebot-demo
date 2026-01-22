@@ -1,16 +1,22 @@
+---
+import { Picture } from "astro:assets";
+import Logomark from "~/assets/images/logomark.png";
+---
+
 <header class="border-b border-white/10">
   <div
     class="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-6"
   >
     <a class="flex items-center gap-4" href="/" rel="home">
-      <img
-        src="/assets/images/logo.png"
+      <Picture
         alt="VantaShield logomark"
         class="size-11 rounded-full object-cover"
-        width={512}
-        height={512}
-        loading="eager"
-        decoding="async"
+        densities={[1, 2, 3]}
+        fallbackFormat="webp"
+        formats={["avif"]}
+        priority
+        src={Logomark}
+        width={Logomark.width / 8}
       />
       <div>
         <p class="font-display text-lg leading-none">VantaShield</p>
