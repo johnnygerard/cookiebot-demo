@@ -2,12 +2,26 @@
 import Layout from "~/layouts/Layout.astro";
 ---
 
-<Layout>
-  <div class="grid min-h-screen place-items-center">
-    <div class="text-center">
-      <h1>404 Not Found</h1>
-      <p>Sorry, the page you are looking for does not exist.</p>
-      <a href="/">Back to Home</a>
+<Layout title="Not Found Page">
+  <div class="mx-auto grid w-full max-w-6xl place-items-center px-6 py-20">
+    <div
+      class="w-full max-w-xl rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_0_60px_rgba(114,176,29,0.08)]"
+    >
+      <hgroup class="space-y-3">
+        <p class="text-sm tracking-[0.4em] text-lime-moss/80 uppercase">404</p>
+        <h1 class="font-display text-4xl text-lavender-mist sm:text-5xl">
+          Page Not Found
+        </h1>
+      </hgroup>
+      <p class="mt-4 text-sm text-lavender-mist/70">
+        Sorry, the page you are looking for does not exist.
+      </p>
+      <a
+        class="mt-8 inline-flex rounded-full bg-lime-moss px-5 py-2.5 text-sm font-semibold text-onyx transition hover:bg-lime-moss/90"
+        href="/"
+      >
+        Back to Home
+      </a>
     </div>
   </div>
 </Layout>

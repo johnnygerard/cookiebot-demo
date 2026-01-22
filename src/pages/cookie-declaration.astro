@@ -1,0 +1,28 @@
+---
+import Layout from "~/layouts/Layout.astro";
+---
+
+<Layout title="Cookie Declaration">
+  <section class="mx-auto w-full max-w-6xl px-6 py-16">
+    <p class="text-sm tracking-[0.3em] text-lime-moss/80 uppercase">
+      Cookie policy
+    </p>
+    <h1 class="mt-4 font-display text-3xl text-lavender-mist">
+      Cookie declaration
+    </h1>
+    <p class="mt-4 text-sm text-lavender-mist/70">
+      Review the cookies used on this site and update your consent preferences
+      at any time.
+    </p>
+    <div
+      class="mt-8 min-h-250 rounded-2xl border border-white/10 bg-white/5 p-6"
+    >
+      <script
+        async
+        id="CookieDeclaration"
+        is:inline
+        src="https://consent.cookiebot.com/d04a1e87-2132-4bc2-a0c5-af45c155f4ef/cd.js"
+      ></script>
+    </div>
+  </section>
+</Layout>

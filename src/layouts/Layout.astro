@@ -1,7 +1,16 @@
 ---
+import { Font } from "astro:assets";
+import Footer from "~/components/Footer.astro";
 import GtmNoScript from "~/components/GtmNoScript.astro";
 import GtmScript from "~/components/GtmScript.astro";
+import Header from "~/components/Header.astro";
 import "~/styles/globals.css";
+
+type Props = {
+  title?: string;
+};
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,26 +18,31 @@ import "~/styles/globals.css";
   <head>
     <meta charset="utf-8" />
     <GtmScript />
+    <Font cssVariable="--font-inter" preload={true} />
+    <Font cssVariable="--font-space-grotesk" preload={true} />
     <link
       rel="icon"
-      href="/assets/images/favicon-light.png"
-      media="(prefers-color-scheme: light)"
-      type="image/png"
-      sizes="32x32"
-    />
-    <link
-      rel="icon"
-      href="/assets/images/favicon-dark.png"
-      media="(prefers-color-scheme: dark)"
+      href="/assets/images/favicon.png"
       type="image/png"
       sizes="32x32"
     />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cookiebot Demo</title>
+    <title>{title ? `${title} | VantaShield` : "VantaShield"}</title>
+    <meta
+      name="description"
+      content="VantaShield is a cybersecurity firm providing managed defense, incident readiness, and cloud assurance."
+    />
   </head>
-  <body>
+  <body class="bg-onyx font-sans text-base text-lavender-mist">
     <GtmNoScript />
-    <slot />
+    {/* This wrapper prevents a body overflow in mobile browsers. */}
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <main class="grid flex-1 items-center">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

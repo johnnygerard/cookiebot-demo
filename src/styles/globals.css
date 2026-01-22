@@ -32,4 +32,17 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /*
+    Color palette: Forest Whispers
+    Source: https://coolors.co/palette/0d0a0b-454955-f3eff5-72b01d-3f7d20
+  */
+  --color-onyx: #0d0a0b;
+  --color-charcoal-blue: #454955;
+  --color-lavender-mist: #f3eff5;
+  --color-lime-moss: #72b01d;
+  --color-green: #3f7d20;
+
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
