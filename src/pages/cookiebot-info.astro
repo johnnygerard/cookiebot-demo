@@ -1,0 +1,116 @@
+---
+import Layout from "~/layouts/Layout.astro";
+
+const properties = [
+  { label: "consent.necessary", path: "consent.necessary" },
+  { label: "consent.preferences", path: "consent.preferences" },
+  { label: "consent.statistics", path: "consent.statistics" },
+  { label: "consent.marketing", path: "consent.marketing" },
+  { label: "consent.method", path: "consent.method" },
+  { label: "consented", path: "consented" },
+  { label: "declined", path: "declined" },
+  { label: "hasResponse", path: "hasResponse" },
+  { label: "doNotTrack", path: "doNotTrack" },
+  { label: "regulations.gdprApplies", path: "regulations.gdprApplies" },
+  { label: "regulations.ccpaApplies", path: "regulations.ccpaApplies" },
+  { label: "regulations.lgpdApplies", path: "regulations.lgpdApplies" },
+];
+---
+
+<Layout title="Cookiebot info">
+  <section class="mx-auto w-full max-w-5xl px-6 pt-20 pb-16">
+    <div class="flex flex-col gap-4">
+      <p class="text-sm tracking-[0.3em] text-lime-moss/80 uppercase">
+        Cookiebot CMP
+      </p>
+      <h1 class="font-display text-4xl text-lavender-mist">
+        Cookiebot object properties
+      </h1>
+      <p class="max-w-2xl text-sm text-lavender-mist/70">
+        Live readout of the Cookiebot consent object. If the Cookiebot script
+        has not loaded yet, values will display as “Unavailable”.
+      </p>
+      <div
+        class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 text-sm text-lavender-mist/70"
+      >
+        <p class="text-xs tracking-[0.2em] text-lavender-mist/50 uppercase">
+          Status
+        </p>
+        <p class="mt-2 text-base text-lavender-mist">
+          Cookiebot loaded: <span id="cookiebot-loaded">Checking…</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-2xl border border-white/10">
+      <table class="w-full text-left text-sm">
+        <thead class="bg-white/5 text-lavender-mist/80">
+          <tr>
+            <th class="px-5 py-4 font-medium">Property</th>
+            <th class="px-5 py-4 font-medium">Value</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-white/10">
+          {
+            properties.map((property) => (
+              <tr>
+                <td class="px-5 py-4 text-lavender-mist/70">
+                  {property.label}
+                </td>
+                <td
+                  class="px-5 py-4 font-medium text-lavender-mist"
+                  data-cookiebot-prop={property.path}
+                >
+                  Checking…
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const formatValue = (value: unknown): string => {
+      if (value === undefined) {
+        return "Unavailable";
+      }
+      if (value === null) {
+        return "null";
+      }
+      return String(value);
+    };
+
+    const resolvePath = (
+      path: string,
+      target: Record<string, unknown> | undefined | null,
+    ): unknown =>
+      path.split(".").reduce<unknown>((acc, key) => {
+        if (!acc || typeof acc !== "object") {
+          return undefined;
+        }
+        return (acc as Record<string, unknown>)[key];
+      }, target);
+
+    const updateCookiebotValues = () => {
+      const cookiebot = window.Cookiebot;
+      const loadedEl = document.getElementById("cookiebot-loaded");
+
+      if (loadedEl) {
+        loadedEl.textContent = cookiebot ? "Yes" : "No";
+      }
+
+      document.querySelectorAll("[data-cookiebot-prop]").forEach((element) => {
+        const path = element.getAttribute("data-cookiebot-prop");
+        const value = path ? resolvePath(path, cookiebot) : undefined;
+        element.textContent = formatValue(value);
+      });
+    };
+
+    updateCookiebotValues();
+    window.addEventListener("CookiebotOnAccept", updateCookiebotValues);
+    window.addEventListener("CookiebotOnDecline", updateCookiebotValues);
+    window.addEventListener("CookiebotOnLoad", updateCookiebotValues);
+  </script>
+</Layout>
