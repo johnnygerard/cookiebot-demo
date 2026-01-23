@@ -1,12 +1,13 @@
-# Astro 5 Starter
-
-This starter repository facilitates the creation of new Astro projects using the configuration described below.
-
-To learn how to use a GitHub template repository, check
-out [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+# Cookiebot Demo
 
 ![project status](https://img.shields.io/badge/project_status-active-success?style=for-the-badge)
 [![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://cookiebot-demo.mail-25a.workers.dev/)
+
+## Overview
+
+This demo project showcases the integration of [Cookiebot CMP](https://www.cookiebot.com/us/) with [Google Analytics 4 (GA4)](https://analytics.google.com/) and [Microsoft Clarity](https://clarity.microsoft.com/) using the tech stack described below. [Google Tag Manager (GTM)](https://tagmanager.google.com/) is used to load the Cookiebot CMP consent banner and conditionally load GA4 and Clarity based on user consent. The main benefit of using GTM is the ability to manage and update tags without modifying the website code.
+
+Website visitors can update their cookie preferences at any time by clicking on the [Cookiebot CMP privacy trigger](https://support.cookiebot.com/hc/en-us/articles/4406571299346-The-Cookiebot-CMP-Privacy-trigger) in the lower-left corner of the page.
 
 ## Tech Stack
 
@@ -18,6 +19,31 @@ out [Creating a repository from a template](https://docs.github.com/en/repositor
 ### Backend
 
 - **Hosting**: [Cloudflare Workers](https://workers.cloudflare.com/)
+
+## Pages
+
+- [Home](https://cookiebot-demo.mail-25a.workers.dev/)
+- [Cookie declaration](https://cookiebot-demo.mail-25a.workers.dev/cookie-declaration)
+- [404](https://cookiebot-demo.mail-25a.workers.dev/404)
+
+Note that the homepage is a landing page for a fictional cybersecurity firm. This page was generated with [GPT-5.2-Codex](https://platform.openai.com/docs/models/gpt-5.2-codex) to make the demo more realistic.
+
+## Cookiebot Legislation Presets
+
+The Cookiebot CMP for this project is configured with the GDPR legislation preset for all website visitors. To apply separate legislation presets based on visitor location (e.g., GDPR for EU visitors, CCPA for US visitors), you will need to create multiple domain groups (even for the same domain). Note that the free plan of Cookiebot only allows for one domain and one domain group. Visit [Regulations](https://support.cookiebot.com/hc/en-us/categories/360000349934-Regulations) to learn more about the different legislation presets supported by Cookiebot.
+
+## GTM Container Setup
+
+The GTM container for this project is configured to enforce the basic [Google Consent Mode](https://support.cookiebot.com/hc/en-us/articles/12756353963292-About-Google-consent-mode). This is required for strict compliance because the advanced mode (Google's default) does not block tags from firing before user consent is granted.
+
+The GTM container ID is located in the `.env` file as the variable `PUBLIC_GTM_CONTAINER_ID`. From Cloudflare dashboard, it is possible to override this environment variable to use a different GTM container ID.
+
+## GTM noscript Tag
+
+The GTM noscript tag must not be included for the following reason (source: [Require consent before loading Facebook pixel](https://support.cookiebot.com/hc/en-us/articles/360004461894-Require-consent-before-loading-Facebook-pixel)):
+
+> The `<noscript>` tags must be removed since Cookiebot is a JavaScript solution, and noscript is for browsers that do not support JavaScript.
+> If you do include the `<noscript>` tag, then you may unintentionally be setting cookies without a visitor's consent.
 
 ## How to Update
 
