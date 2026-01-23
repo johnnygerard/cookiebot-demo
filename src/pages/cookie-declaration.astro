@@ -15,7 +15,7 @@ import Layout from "~/layouts/Layout.astro";
       at any time.
     </p>
     <div
-      class="mt-8 min-h-250 rounded-2xl border border-white/10 bg-white/5 p-6"
+      class="mt-8 rounded-2xl border border-white/10 bg-white/5 p-6 not-noscript:min-h-250"
     >
       <script
         async
@@ -23,6 +23,16 @@ import Layout from "~/layouts/Layout.astro";
         is:inline
         src="https://consent.cookiebot.com/d04a1e87-2132-4bc2-a0c5-af45c155f4ef/cd.js"
       ></script>
+      <noscript>
+        <p class="text-lavender-mist/70">
+          JavaScript is required to display the cookie declaration. Please
+          <a
+            href="https://www.enable-javascript.com/"
+            class="text-lime-moss underline hover:text-lime-moss/80"
+            >enable JavaScript</a
+          > to view this content.
+        </p>
+      </noscript>
     </div>
   </section>
 </Layout>
