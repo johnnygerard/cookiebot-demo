@@ -36,7 +36,7 @@ The Cookiebot CMP for this project is configured with the GDPR legislation prese
 
 The GTM container for this project is configured to enforce the basic [Google Consent Mode](https://support.cookiebot.com/hc/en-us/articles/12756353963292-About-Google-consent-mode). This is required for strict compliance because the advanced mode (Google's default) does not block tags from firing before user consent is granted.
 
-The GTM container ID is located in the `.env` file as the variable `PUBLIC_GTM_CONTAINER_ID`. From Cloudflare dashboard, it is possible to override this environment variable to use a different GTM container ID.
+The GTM container ID is located in the `.env` file as the variable `PUBLIC_GTM_CONTAINER_ID`. From the Cloudflare dashboard, it is possible to override this environment variable to use a different GTM container ID.
 
 ## GTM noscript Tag
 
