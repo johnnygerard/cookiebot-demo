@@ -2,6 +2,10 @@
 
 ![project status](https://img.shields.io/badge/project_status-active-success?style=for-the-badge)
 [![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://cookiebot-demo.mail-25a.workers.dev/)
+[![Lighthouse report](<https://img.shields.io/badge/lighthouse_(mobile)-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff>)](https://googlechrome.github.io/lighthouse/viewer/?gist=be0a41dd3de5c24c02201ed29e5e5bfc)
+[![Lighthouse report](<https://img.shields.io/badge/lighthouse_(desktop)-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff>)](https://googlechrome.github.io/lighthouse/viewer/?gist=e1c9ccff39947b08309a79a6e602bb7d)
+
+Lighthouse note: The mobile performance score isn’t green mainly because the Cookiebot consent banner loads after [GTM](https://tagmanager.google.com/) and is counted as the [LCP](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint) element. This performance hit only affects users who haven’t given consent yet.
 
 ## Overview
 
