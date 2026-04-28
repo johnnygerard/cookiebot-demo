@@ -42,7 +42,7 @@ export default defineConfig({
     ],
   },
   integrations: [sitemap()],
-  site: "https://cookiebot-demo.mail-25a.workers.dev",
+  site: "https://cookiebot-demo.jgerard.workers.dev",
   trailingSlash: "never",
   vite: {
     plugins: [

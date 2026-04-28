@@ -1,7 +1,7 @@
 # Cookiebot Demo
 
 ![project status](https://img.shields.io/badge/project_status-active-success?style=for-the-badge)
-[![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://cookiebot-demo.mail-25a.workers.dev/)
+[![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://cookiebot-demo.jgerard.workers.dev/)
 [![Lighthouse report](<https://img.shields.io/badge/lighthouse_(mobile)-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff>)](https://googlechrome.github.io/lighthouse/viewer/?gist=be0a41dd3de5c24c02201ed29e5e5bfc)
 [![Lighthouse report](<https://img.shields.io/badge/lighthouse_(desktop)-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff>)](https://googlechrome.github.io/lighthouse/viewer/?gist=e1c9ccff39947b08309a79a6e602bb7d)
 
@@ -26,10 +26,10 @@ Website visitors can update their cookie preferences at any time by clicking on 
 
 ## Pages
 
-- [Home](https://cookiebot-demo.mail-25a.workers.dev/)
-- [Cookie declaration](https://cookiebot-demo.mail-25a.workers.dev/cookie-declaration)
-- [Cookiebot info](https://cookiebot-demo.mail-25a.workers.dev/cookiebot-info)
-- [404](https://cookiebot-demo.mail-25a.workers.dev/404)
+- [Home](https://cookiebot-demo.jgerard.workers.dev/)
+- [Cookie declaration](https://cookiebot-demo.jgerard.workers.dev/cookie-declaration)
+- [Cookiebot info](https://cookiebot-demo.jgerard.workers.dev/cookiebot-info)
+- [404](https://cookiebot-demo.jgerard.workers.dev/404)
 
 Note that the homepage is a landing page for a fictional cybersecurity firm. This page was generated with [GPT-5.2-Codex](https://platform.openai.com/docs/models/gpt-5.2-codex) to make the demo more realistic.
 
